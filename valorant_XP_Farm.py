@@ -1,4 +1,4 @@
-# This is the public version. 
+# This is the public version.
 import pyautogui
 import time
 import sys
@@ -77,7 +77,7 @@ def load_Credentials(filename):
         print("Error: file not found or cannot be opened.")
     return credentials_Dict
 
-credentials_Dict = load_Credentials("credentials.txt")
+credentials_Dict = load_Credentials("../credentials_Personal/credentials.txt")
 
 #------------------------------------------------------------------------------#
 # Loads lifetime xp from file. Updates global param.
@@ -294,7 +294,7 @@ def screenshot_Location(dict_Key):
 # PARAM: dictionary key; RETURN: N/A
 def capture_Save(dict_Key):
     image_Saved = screenshot_Location(dict_Key)
-    image_Saved.save(dict_Key + ".png")
+    image_Saved.save("./saved_Images/" + dict_Key + ".png")
     return
 
 #------------------------------------------------------------------------------#
@@ -348,7 +348,7 @@ def input_Credentials(user):
     # wait for the login interface to open. Look for pre-saved an image of it.
     # if image can't be found, then just wait 20 seconds. Then take picture.
     try:
-        while pyautogui.locateOnScreen('loginInterface.png') == None:
+        while pyautogui.locateOnScreen('./saved_Images/loginInterface.png') == None:
             print("Status: Waiting for login interface...")
             time.sleep(2)
     except:
@@ -411,10 +411,10 @@ def xp_Current():
 def update_Game_State():
     global rounds_Played, game_State
     # If play button is seen, then game state is 0.
-    if (pyautogui.locateOnScreen('playA.png') != None) or (pyautogui.locateOnScreen('playB.png') != None):
+    if (pyautogui.locateOnScreen('./saved_Images/playA.png') != None) or (pyautogui.locateOnScreen('./saved_Images/playB.png') != None):
         game_State = 0
     # If queue button is seen, then game state is 1.
-    elif (pyautogui.locateOnScreen('queueA.png') != None) or (pyautogui.locateOnScreen('queueB.png') != None):
+    elif (pyautogui.locateOnScreen('./saved_Images/queueA.png') != None) or (pyautogui.locateOnScreen('./saved_Images/queueB.png') != None):
         game_State = 1
     # If neither is seen, then game state is 2.
     else:
@@ -575,7 +575,7 @@ def introduction():
         # Time just in case it never loads
         timer_Temp = 0
         # Check if play button exists
-        while pyautogui.locateOnScreen('playdefault.png') == None:
+        while pyautogui.locateOnScreen('./saved_Images/playdefault.png') == None:
             if timer_Temp >= 60:
                 print("Error: Load timeout")
                 exit()
