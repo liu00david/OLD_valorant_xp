@@ -58,7 +58,6 @@ loc_Error_Dict["weaponsX"] =        (3,3)
 
 #------------------------------------------------------------------------------#
 # Make a dictionary of all login information
-
 def load_Credentials(filename):
     credentials_Dict = {}
     try:
@@ -67,7 +66,11 @@ def load_Credentials(filename):
             for line in fh:
                 try:
                     (alias,username,password) = line.split(',')
-                    credentials_Dict[alias] = (username,password[:-1])
+                    # if last char is newline
+                    if password[-1] == "\n":
+                        credentials_Dict[alias] = (username,password[:-1])
+                    else:
+                        credentials_Dict[alias] = (username,password)
                 except:
                     print("Invalid line at line " + str(line_Num))
                     continue
