@@ -1,3 +1,4 @@
+# This is the public version. 
 import pyautogui
 import time
 import sys
