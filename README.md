@@ -2,11 +2,12 @@
 *Designed, written and documented by David Liu*
 
 ### Table of Contents:
-0. [User Notes](#sub-heading-1)
-1. [Overview](#sub-heading-2)
-2. [User Setup](#sub-heading-3)
-3. [User Operation](#sub-heading-4)
-4. [Planned improvements](#sub-heading-5)
+0. [User Notes](#0-user-notes)
+1. [Overview](#overview)
+2. [User Setup](#user-setup)
+3. [User Operation](#user-operation)
+4. [Problems and Questions](#problems-and-questions)
+5. [Planned improvements](#planned-improvements)
 
 ***
 
@@ -129,7 +130,7 @@ If there is any problem happening (queue not starting, error messages), try star
 
 *** 
 
-## (5) Future work 
+## (5) Planned Improvements 
 I plan on continuing to work on this project to make it even more foolproof. Here are some ideas I plan on continuing:
 - Moving the mouse 
 - Constraining the maximum time in game
