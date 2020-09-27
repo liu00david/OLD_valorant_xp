@@ -49,6 +49,7 @@ As of 9/27/20, the following list are additional features of the program:
 - **Random** movement direction, shooting, and length of time of actions. This likely helps prevent flagging of bot, as it may deal some damage. 
 - Buying random guns from armory.
 - Smooth and random mouse movements and click area. 
+
 **User Features**
 - Automatic status update if game state is changed.
 - Status updates with key presses.
