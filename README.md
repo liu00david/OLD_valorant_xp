@@ -31,16 +31,18 @@ I am not responsible for the possible ban or termination of an account for using
 Now I will cover the basics of what everything is for those who have not heard of or have not played Valorant before. Then I will cover what this program does explicitly.  
 
 ### (1.1) Valorant
-Valorant is a free-to-play multiplayer tactical first-person shooter. Quickly summarized, there exists a **battlepass**, which is a 50-tier system designed to give rewards to those who gain enough **experience points**. To Playing any game mode reaps experience points **XP**. One game mode is called **deathmatch**. Deathmatch games last for approximately 5-10 minutes. This is the only game mode that does not require a team, as it is a **free-for-all**, everyone fending for themselves. 
+Valorant is a free-to-play multiplayer tactical first-person shooter. Quickly summarized, there exists a **battlepass**, which is a 50-tier system designed to give rewards to those who gain enough **experience points**. Playing any game mode reaps experience points, or **XP**. One game mode, **deathmatch**, lasts for approximately 5-10 minutes. This is the only game mode that does not require a team, as it is a **free-for-all**, everyone fending for themselves. 
 
 ### (1.2) The program
 This program comes in three parts. I will first explain the in-game part.
 
-Obviously as a free-for-all, it will not hurt anyone if you do not contribute to the game. But as for most kinds of games, Valorant software can detect if you are **away from the keyboard**, or **AFK**. Being AFK means not moving, shooting, etc. If you are flagged AFK, then you will not recieve XP for a game. To counter that, this program will do is move, shoot, and even buy guns for you. Thus, you are now AFK proof.
+Obviously as a free-for-all, it will not hurt anyone if you do not contribute to the game. But as for most kinds of games, Valorant software can detect if you are **away from the keyboard**, or **AFK**. AFK  can be flagged if a player is not moving, shooting, etc. This usually means the player is doing other things and not actively playing. If you are flagged AFK, then you will not recieve XP for a game. To counter that, this program will do is move, shoot, and even buy guns for you. Thus, you are now AFK proof.
 
 The second part is automating the process of starting games. This program will check to see if Valorant is currently in one of three states: **ready for a game, in queue,** or **in game**. If it is ready for a game, then go into the **queue**, which is essentially a waiting lobby for your turn to join a game. If it is not ready for a game, and also not in queue, then it is in game, and proceed to do AFK-proof movements. 
 
 The third part is automating the log-in aspect of Valorant. (Though, I plan on separating this function from the actual XP bot.) This is extremely useful if you have multiple accounts. Users enter the account nickname, and the program will automatically do the rest for them by inputing all the credentials in and then opening Valorant. 
+
+Note: For those who do not know, a **farm** is slang for any easy way to cultivate something. An **AFK XP farm** means an easy way to gain XP while being AFK.  
 
 ### (1.3) Features
 As of 9/27/20, the following list are additional features of the program:
