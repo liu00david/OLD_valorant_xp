@@ -5,7 +5,7 @@
 0. [User Notes](#0-user-notes)
 1. [Overview](#1-overview)
 2. [User Setup](#2-user-setup)
-3. [User Operation](#3-user-operation)
+3. [User Operation](#3-user-operation-for-run-deathmatch-only)
 4. [Problems and Questions](#4-problems-and-questions)
 5. [Planned improvements](#5-planned-improvements)
 
