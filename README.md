@@ -20,7 +20,7 @@ As of 9/27/20, this program expects the following inputs and prerequisites:
 - Valorant installed
 - Python installed
 
-This bot is intended to used by anyone who plays Valorant. That said, this bot _performs best when a player is also active on the account_. The fastest ways to level up a battlepass are by playing games and by completing the daily and weekly missions. Though theortically speaking, one could level through the entire battlepass with just the bot by running it for approximately 400 hours (~1,600,000 XP divided by 4,000 XP per hour).
+This bot is intended to used by anyone who plays Valorant. That said, this bot _performs best when a player is also active on the account_. The fastest ways to level up a battlepass are by playing games and by completing the daily and weekly missions. Though, theortically speaking, one could level through the entire battlepass with just the bot by running it for approximately 400 hours (~1,600,000 XP divided by 4,000 XP per hour).
 
 ### (0.2) Risk acknowledgement
 I am not responsible for the possible ban or termination of an account for using this program. Riot (the developer) _likely_ does not condone this. Though, over three separate accounts, I have ran this bot for over 40 hours cumulatively (as of 9/27/20), and have not recieved any warning or ban. See (1.3) for possible reasons why I have not been banned. 
