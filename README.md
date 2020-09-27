@@ -95,7 +95,9 @@ B. If run XP bot:
 1. Have Valorant logged in, open, at the home screen, in window mode (not fullscreen). <ins>This is crucial, and bot will not work if Valorant is in full screen.<ins> (will provide an IMAGE)
 2. It will ask for how many hours you would like the bot to run. Preferably, do not put a number over 5.
 3. It will then proceed to work in Valorant. _Do not move your mouse after countdown._
-
+  
+***
+  
 ## (3) User Operation: For Run Deathmatch Only
 This section (3) is only for running the XP bot, or the deathmatch program. 
 
@@ -108,6 +110,8 @@ Summary of keys: 'ESC', 'U', 'I'
 - 'I': Time elapsed and left: Hold the 'I' key to get an update on how many minutes passed, and how many minutes are left to run. 
 
 If there is any problem happening (queue not starting, error messages), try starting again from (2.4) step B. If run XP bot. 
+
+***
 
 ## (4) Future work 
 I plan on continuing to work on this project to make it even more foolproof. Here are some ideas I plan on continuing:
