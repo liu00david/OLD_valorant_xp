@@ -16,7 +16,7 @@ Hello. Welcome to my implementation of an experience farm for Valorant. I will b
 
 ### (0.1) Intended usage 
 As of 9/27/20, this program expects the following inputs and prerequisites:
-- 1920x1080 resolution monitor 
+- 1920 x 1080 resolution monitor 
 - Windows 8 or 10
 - Valorant installed
 - Python installed
@@ -93,11 +93,11 @@ Open your terminal, or command line (on your computer, go to the search bar, and
 4. Type and enter **py valorant_XP_Farm.py** 
 5. It will prompt you what you would like to do. 1: Open Valorant, 2: Open Valorant and run the XP bot, 3: Run the XP bot, or 4: exit. Type in the number for what you want. 
 
-A. If open Valorant: 
+A. Chose to open Valorant: 
 1. It will ask you for the alias associated with the account located in file. After entering a valid alias, it will load Valorant. _Do not move your mouse after countdown._
 
-B. If run XP bot: 
-1. Have Valorant logged in, open, at the home screen, in window mode (not fullscreen). <ins>This is crucial, and bot will not work if Valorant is in full screen.<ins> (will provide an IMAGE)
+B. Chose to run XP bot: 
+1. Have Valorant logged in, open, at the home screen, and in window mode (not fullscreen). Press the 'F11' key to go from fullscreen to window (vice versa). <ins>This is crucial, and bot will not work if Valorant is in full screen.<ins> (will provide an IMAGE)
 2. It will ask for how many hours you would like the bot to run. Preferably, do not put a number over 5.
 3. It will then proceed to work in Valorant. _Do not move your mouse after countdown._
   
