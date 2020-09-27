@@ -22,8 +22,10 @@ As of 9/27/20, this program expects the following inputs and prerequisites:
 
 This bot is intended to used by anyone who plays Valorant. That said, this bot _performs best when a player is also active on the account_. The fastest ways to level up a battlepass are by playing games and by completing the daily and weekly missions. Though, theortically speaking, one could level through the entire battlepass with just the bot by running it for approximately 400 hours (~1,600,000 XP divided by 4,000 XP per hour).
 
+It is recommended to use this bot when not actively needing to use the computer. I usually leave this bot running on my PC overnight.
+
 ### (0.2) Risk acknowledgement
-I am not responsible for the possible ban or termination of an account for using this program. Riot (the developer) _likely_ does not condone this. Though, over three separate accounts, I have ran this bot for over 40 hours cumulatively (as of 9/27/20), and have not recieved any warning or ban. See (1.3) for possible reasons why I have not been banned. 
+I am not responsible for the possible ban or termination of an account for using this program. Riot (the developer) _likely_ does not condone this. Though, over three separate accounts, I have ran this bot for over 60 hours cumulatively (as of 9/27/20), and have not recieved any warning or ban. See (1.3) for possible reasons why I have not been banned. 
 
 ***
 
@@ -115,7 +117,19 @@ If there is any problem happening (queue not starting, error messages), try star
 
 ***
 
-## (4) Future work 
+## (4) Problems and Questions
+- Problem: I don't want my mouse to move anymore!
+  - Solution: Hold 'ESC' key. You can also try quickly moving to the terminal and press control and C (CTRL + C).
+- P: I get an error message in the terminal.
+  - S: Check all the files exist from the instructions. You should not be getting any error if all the files exist.
+- P: The deathmatch is not queueing.
+  - S: Make sure your windows are all closed, except the terminal and the Valorant window. Sometimes, the code (image searching algorithm) can bug out. 
+- P: I want to play this game of deathmatch instead.
+  - S: Just hold the 'ESC' key. 
+
+*** 
+
+## (5) Future work 
 I plan on continuing to work on this project to make it even more foolproof. Here are some ideas I plan on continuing:
 - Moving the mouse 
 - Constraining the maximum time in game
