@@ -2,11 +2,11 @@
 *Designed, written and documented by David Liu*
 
 ### Table of Contents:
-0. User Notes
-1. Overview
-2. User Setup
-3. User Operation 
-4. Planned improvements
+0. [User Notes](#sub-heading-1)
+1. [Overview](#sub-heading-2)
+2. [User Setup](#sub-heading-3)
+3. [User Operation](#sub-heading-4)
+4. [Planned improvements](#sub-heading-5)
 
 ***
 
@@ -86,7 +86,7 @@ Check everything is downloaded successfully. lifetime_XP.txt should just have th
 ### (2.4) Start program
 Open your terminal, or command line (on your computer, go to the search bar, and type in "command", and it should be a black box.) 
 
-1. Find the folder you downloaded. If you have trouble with this step, look here: https://support.microsoft.com/en-us/help/17436/windows-internet-explorer-download-files-from-web. You can also try searching for the folder name _valorant_XP_Farm_ on your computer.
+1. Find the folder you downloaded. If you have trouble with this step, look here: [Find Download](https://support.microsoft.com/en-us/help/17436/windows-internet-explorer-download-files-from-web.) You can also try searching for the folder name _valorant_XP_Farm_ on your computer.
 2. Drag or move this folder to your desktop. 
 3. Move the terminal window against the bottom left of your screen. Navigate to this folder in the terminal. Type and enter **cd Desktop/valorant_XP_Farm**.
 4. Type and enter **py valorant_XP_Farm.py** 
@@ -107,7 +107,7 @@ This section (3) is only for running the XP bot, or the deathmatch program.
 
 I will go over the simple in-program user functions I implemented to help users understand what is going on. These work _after_ the countdown is done. 
 
-Summary of keys: 'ESC', 'U', 'I'
+Summary of keys: **'ESC', 'U', 'I'**
 
 - 'ESC': Exit program: Hold the 'ESC' key (for at least 10 seconds) to leave the program. This will stop the bot in its tracks. So if your mouse moves where you do not want it to, just hold down the 'ESC' key and wait.
 - 'U': Update game state: Hold the 'U' key to get a update on whether the game is still in queue or in game. Will also show local time.
@@ -123,8 +123,8 @@ If there is any problem happening (queue not starting, error messages), try star
 - P: I get an error message in the terminal.
   - S: Check all the files exist from the instructions. You should not be getting any error if all the files exist.
 - P: The deathmatch is not queueing.
-  - S: Make sure your windows are all closed, except the terminal and the Valorant window. Sometimes, the code (image searching algorithm) can bug out. 
-- P: I want to play this game of deathmatch instead.
+  - S: Make sure all your windows are closed, except for the terminal and the Valorant windows. Sometimes, the code (image searching algorithm) can bug out. 
+- P: I want to play this game of deathmatch instead of the bot.
   - S: Just hold the 'ESC' key. 
 
 *** 
