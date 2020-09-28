@@ -6,6 +6,7 @@ import random
 import math
 import keyboard
 
+version = "v1.1"
 ################################################################################
 # DICTIONARIES
 #------------------------------------------------------------------------------#
@@ -85,7 +86,7 @@ credentials_Dict = load_Credentials("./credentials.txt")
 def load_Lifetime_XP():
     global lifetime_XP
     try:
-        with open("lifetime_XP.txt","r") as fh:
+        with open("./lifetime_XP.txt","r") as fh:
             for line in fh:
                 pass
             last_Line = str(line)
@@ -132,10 +133,13 @@ game_State = -1
 # game_State_Prev
 game_State_Prev = -1
 
-# start_Time_Deathmatch
+# start_Time_Deathmatch is the time when deathmatch MODE started
 start_Time_Deathmatch = -1
-
+# lifetime_XP is lifetime XP written into a textfile
 lifetime_XP = -1
+
+# time since game start measures the time a single game started
+time_Since_Game_Start = -1
 
 ################################################################################
 # MAIN FUNCTIONS
@@ -166,14 +170,14 @@ def open_Valorant():
 # PARAM: hours to run; RETURN: N/A
 
 def run_Deathmatch(runtime_Hours):
-    global game_State, game_State_Prev, rounds_Played, start_Time_Deathmatch
+    global game_State, game_State_Prev, rounds_Played, start_Time_Deathmatch, time_Since_Game_Start
     # Initialize game_State.
     game_State = 0
 
     # Preparation time.
     prep_Time(5)
 
-    # Record time of start.
+    # Record time of start of program.
     start_Time_Deathmatch = time.time()
     # Duration to run turned to seconds.
     time_To_Run = 60*60*runtime_Hours
@@ -202,8 +206,10 @@ def run_Deathmatch(runtime_Hours):
             print("\n------------------------------------------")
             print("Time elapsed (minutes): ", time_Elapsed, "\nTime left (minutes): ", time_Left)
 
-        # Update game state.
-        update_Game_State()
+        # Update game state if it has been at least over 5 minutes since game start. (games take at least 6 mins)
+        # Reduces lookup image time and frequency.
+        if time.time() - time_Since_Game_Start >= 6 * 60:
+            update_Game_State()
 
         # If prev and curr game states changed, print new status
         if game_State_Prev != game_State:
@@ -410,15 +416,20 @@ def xp_Current():
 # update_Game_State: Updates game state by checking play, queue buttons
 # PARAM: N/A; RETURN: N/A
 def update_Game_State():
-    global rounds_Played, game_State
+    global rounds_Played, game_State, time_Since_Game_Start
     # If play button is seen, then game state is 0.
     if (pyautogui.locateOnScreen('./saved_Images/playA.png') != None) or (pyautogui.locateOnScreen('./saved_Images/playB.png') != None):
         game_State = 0
+        time_Since_Game_Start = -1
     # If queue button is seen, then game state is 1.
     elif (pyautogui.locateOnScreen('./saved_Images/queueA.png') != None) or (pyautogui.locateOnScreen('./saved_Images/queueB.png') != None):
         game_State = 1
+        time_Since_Game_Start = -1
     # If neither is seen, then game state is 2.
     else:
+        # If the previous game state was not 2, then it just began, and record time.
+        if game_State != 2:
+            time_Since_Game_Start = time.time()
         game_State = 2
     return
 
@@ -457,48 +468,56 @@ def wait_In_Queue():
 #------------------------------------------------------------------------------#
 # AFK_Movement: in game, so do AFK functions
 def AFK_Movement():
-    # Begin AFK functions
-    AFK_time = random.uniform(1,3.5)
-    action = random.choice(["buy","fire","move","moveNfire","nothing"])
-    time_Start = time.time()
-    while time.time() - time_Start <= AFK_time:
-        if action == "buy":
-            # b for armory
-            pyautogui.press("b")
-            time.sleep(0.2)
-            # move to weapon wanted
-            pyautogui.moveTo(uniform_Location("weapons"),duration=random.uniform(0.3,0.4))
-            pyautogui.click()
-            time.sleep(0.2)
-            # move to exit
-            pyautogui.moveTo(uniform_Location("weaponsX"),duration=random.uniform(0.3,0.4))
-            pyautogui.click()
-            move_And_Fire(AFK_time)
+    time.sleep(0.05)
+    # 1.5 to 5.5 seconds. Average: 3.5
+    AFK_time = random.uniform(5.5,8.5)
+    action = random.choice(["buy","fire","move","moveNfire"])
+    if action == "buy":
+        # goes to armory to buy a weapon
+        buy_Armory(AFK_time)
 
-        elif action == "fire":
-            # drag randomly left or right for left click
-            fire_Weapon(AFK_time)
+    elif action == "fire":
+        # drag randomly left or right for left click
+        fire_Weapon(AFK_time)
 
-        elif action == "move":
-            # hold one or two keys down
-            hold_Key(AFK_time)
+    elif action == "move":
+        # hold one or two keys down
+        hold_Key(AFK_time)
 
-        elif action == "moveNfire":
-            move_And_Fire(AFK_time)
+    else:
+        # move and fire
+        move_And_Fire(AFK_time)
 
-        else:
-            # I removed nothing
-            move_And_Fire(AFK_time)
+    time.sleep(0.05)
     return
 
 #------------------------------------------------------------------------------#
+# Go to armory, buy
+# Max time: 0.8 + (8.5-1.1) + 0.5 = 8.7, Min time: 0.5 + (5.5-1.1) + 0.4 = 5.3
+# Average time: 7.0
+def buy_Armory(hold_time):
+    # b for armory
+    pyautogui.press("b")
+    # move to weapon wanted
+    pyautogui.moveTo(uniform_Location("weapons"),duration=random.uniform(0.5,0.8))
+    pyautogui.click()
+    time.sleep(hold_time - 1.1)
+    # move to exit
+    pyautogui.moveTo(uniform_Location("weaponsX"),duration=random.uniform(0.4,0.5))
+    pyautogui.click()
+    return
+
 # Auto holding key
 def hold_Key(hold_time):
-    key1, key2 = "w", random.choice(["w","a","d"])
+    # forward, left, back, right. Pick one, or two adjacent. Make forward more likely.
+    movement = ["d","w","a","s","d","w","a"]
+    random_Int = random.randint(0,6)
+    key1, key2 = movement[random_Int], movement[random_Int - 1]
     time_Start = time.time()
     while(time.time() - time_Start < hold_time):
         pyautogui.keyDown(key1)
-        pyautogui.keyDown(key2)
+        if random.choice([True,False]):
+            pyautogui.keyDown(key2)
     pyautogui.keyUp(key1)
     pyautogui.keyUp(key2)
     return
@@ -508,16 +527,18 @@ def fire_Weapon(hold_time):
     time_Start = time.time()
     while(time.time() - time_Start < hold_time):
         pyautogui.click()
-        time.sleep(random.uniform(0.02,0.1))
+        time.sleep(random.uniform(0.11,0.21))
+    return
 
 # Move and Fire
 def move_And_Fire(hold_time):
-    key1, key2 = "w", random.choice(["w","a","d"])
-    time_Start = time.time()
-    while(time.time() - time_Start < hold_time):
-        pyautogui.keyDown(key1)
+    movement = ["d","w","a","s","d","w","a"]
+    random_Int = random.randint(0,6)
+    key1, key2 = movement[random_Int], movement[random_Int - 1]
+    pyautogui.keyDown(key1)
+    if random.choice([True,False]):
         pyautogui.keyDown(key2)
-        fire_Weapon(hold_time)
+    fire_Weapon(hold_time)
     pyautogui.keyUp(key1)
     pyautogui.keyUp(key2)
     return
@@ -547,7 +568,8 @@ def deathmatch_Summary():
 # BEGIN INTERACTIVE
 #------------------------------------------------------------------------------#
 # Introduction
-def introduction():
+def main():
+    global version
 
     choices_String = "What would you like to do? (enter number): \n\
         1: Open Valorant \n\
@@ -556,7 +578,7 @@ def introduction():
         4: Quit \n"
 
     # Take in selection number
-    selection = str(input("Welcome. " + choices_String))
+    selection = str(input("Welcome to VXPF " + version + "." + choices_String))
 
     while selection not in ["1","2","3","4"]:
         selection = str(input("Invalid input. " + choices_String))
@@ -596,24 +618,4 @@ def introduction():
         exit()
 
 # START
-introduction()
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-#
+main()
