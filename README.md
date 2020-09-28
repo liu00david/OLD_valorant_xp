@@ -71,32 +71,37 @@ This program runs fairly efficiently, as the only significant time consumption i
 Now I will cover how to set up this program to run fluidly, and optimally. Assuming having read section (0.1), let's begin.
 
 ### (2.1) Download source code folder
-In this GitHub repository main page, there is a green button to download the ZIP file. Download it.
-After downloading it, open it to reveal its contents.
+In this GitHub repository main page, there is a green button to download the ZIP file of **VXPF**. Download it.
+After downloading it, open it to reveal its contents. Move this folder to your **Desktop**. 
 
-### (2.2) Install Python packages (if necessary)
-To be resolved.
-
-### (2.3) Fill in necessary files: For Open Valorant Only
+### (2.2) Fill in necessary files: For Open Valorant Only
 Skip this section (2.3) if you do not intend to use the auto-login part of the program. 
 
 In the credentials.txt, fill in your account information. Accounts are separated by lines. Alias, username, and password are separated by commas. Do not deviate from this format, nor have a comma in your password. For alias, you will choose the nickname for this account (it can just be the username too. I use 'david'.) 
 
 Check everything is downloaded successfully. lifetime_XP.txt should just have the value 0 in it. In the saved_Images folder, there should be two images: the loginInterface.png, and playdefault.png. 
 
+### (2.3) Install Python packages 
+Open your terminal, or command line (on your computer, go to the search bar, and type in "command", and it should be a black box.) Now work within the terminal.
+
+1. Type in and enter **py -V** to sure Python was installed successfully. If an error arises, download Python here: https://www.python.org/downloads/
+2. Type in and enter **py -m pip install pyautogui keyboard**. This downloads the necessary Python packages to run. Wait for this to finish. 
+
 ### (2.4) Start program
-Open your terminal, or command line (on your computer, go to the search bar, and type in "command", and it should be a black box.) 
+Continue working in the terminal. 
 
-1. Find the folder you downloaded. If you have trouble with this step, look here: [Find Download](https://support.microsoft.com/en-us/help/17436/windows-internet-explorer-download-files-from-web.) You can also try searching for the folder name _valorant_XP_Farm_ on your computer.
-2. Drag or move this folder to your desktop. 
-3. Move the terminal window against the bottom left of your screen. Navigate to this folder in the terminal. Type and enter **cd Desktop/valorant_XP_Farm**.
-4. Type and enter **py valorant_XP_Farm.py** 
-5. It will prompt you what you would like to do. 1: Open Valorant, 2: Open Valorant and run the XP bot, 3: Run the XP bot, or 4: exit. Type in the number for what you want. 
+1. Drag the terminal window and move it against the bottom left of your screen. 
+2. Type and enter **cd Desktop\VXPF**.
+3. Type and enter **py valorant_XP_Farm.py**.
+4. It will prompt you what you would like to do. 1: Open Valorant, 2: Open Valorant and run the XP bot, 3: Run the XP bot, or 4: exit. Type in the number for what you want. 
 
-A. Chose to open Valorant: 
+A. Chose to open Valorant (1):
 1. It will ask you for the alias associated with the account located in file. After entering a valid alias, it will load Valorant. _Do not move your mouse after countdown._
 
-B. Chose to run XP bot: 
+B. Chose to open and run (2):
+1. Choose this only after knowing that doing the two operations separately (open and run) work properly. Read A and C for information.  
+
+C. Chose to run XP bot (3):
 1. Have Valorant logged in, open, at the home screen, and in window mode (not fullscreen). Press the 'F11' key to go from fullscreen to window (vice versa). <ins>This is crucial, and bot will not work if Valorant is in full screen.<ins> (will provide an IMAGE)
 2. It will ask for how many hours you would like the bot to run. Preferably, do not put a number over 5.
 3. It will then proceed to work in Valorant. _Do not move your mouse after countdown._
@@ -114,7 +119,7 @@ Summary of keys: **'ESC', 'U', 'I'**
 - 'U': Update game state: Hold the 'U' key to get a update on whether the game is still in queue or in game. Will also show local time.
 - 'I': Time elapsed and left: Hold the 'I' key to get an update on how many minutes passed, and how many minutes are left to run. 
 
-If there is any problem happening (queue not starting, error messages), try starting again from (2.4) step B. If run XP bot. 
+If there is any problem happening (queue not starting, error messages), try starting again from (2.4) step C. 
 
 ***
 
