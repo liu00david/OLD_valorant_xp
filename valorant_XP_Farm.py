@@ -80,7 +80,7 @@ def load_Credentials(filename):
         print("Error: file not found or cannot be opened.")
     return credentials_Dict
 
-credentials_Dict = load_Credentials("../credentials_Personal/credentials.txt")
+credentials_Dict = load_Credentials("./credentials.txt")
 
 #------------------------------------------------------------------------------#
 # Loads lifetime xp from file. Updates global param.
