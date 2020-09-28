@@ -15,7 +15,6 @@ import keyboard
 # open_Valorant
 loc_Dict = {}
 loc_Dict["toolbar"] =       (114,1061)
-loc_Dict["valorantApp"] =   (102,510)
 loc_Dict["loginInterface"]= (719,523)
 loc_Dict["username"] =      (399,402)
 loc_Dict["password"] =      (393,465)
@@ -39,7 +38,6 @@ loc_Dict["weaponsX"] =      (1689,160)      #(1858,53)
 # open_Valorant
 loc_Error_Dict = {}
 loc_Error_Dict["toolbar"] =         (1,1)
-loc_Error_Dict["valorantApp"] =     (1,1)
 loc_Error_Dict["loginInterface"]=   (50,15)
 loc_Error_Dict["username"] =        (1,1)
 loc_Error_Dict["password"] =        (1,1)
@@ -329,9 +327,9 @@ def load_Valorant_App():
     time.sleep(1)
     # Type in Valorant
     pyautogui.typewrite("VALORANT")
-    time.sleep(1)
-    # Click on Valorant to run
-    smooth_Click("valorantApp")
+    time.sleep(1.5)
+    # Press enter to run
+    pyautogui.press('\n')
 
     open_State = 1
     return
