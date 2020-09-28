@@ -567,7 +567,7 @@ def deathmatch_Summary():
 ################################################################################
 # BEGIN INTERACTIVE
 #------------------------------------------------------------------------------#
-# Introduction
+# Main
 def main():
     global version
 
@@ -578,7 +578,7 @@ def main():
         4: Quit \n"
 
     # Take in selection number
-    selection = str(input("Welcome to VXPF " + version + "." + choices_String))
+    selection = str(input("Welcome to VXPF " + version + ". " + choices_String))
 
     while selection not in ["1","2","3","4"]:
         selection = str(input("Invalid input. " + choices_String))
