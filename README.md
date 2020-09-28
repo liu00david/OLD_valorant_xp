@@ -16,8 +16,8 @@ Hello. Welcome to my implementation of an experience farm for Valorant. I will b
 
 ### (0.1) Intended usage 
 As of 9/27/20, this program expects the following inputs and prerequisites:
-- 1920 x 1080 resolution monitor 
-- Windows 8 or 10
+- 1920 x 1080 resolution monitor (you can change your computer resolution on some monitors) 
+- Windows 8 or 10 (better on Windows 10)
 - Valorant installed
 - Python installed
 
@@ -48,12 +48,14 @@ The third part is automating the log-in aspect of Valorant. (Though, I plan on s
 Note: For those who do not know, a **farm** is slang for any easy way to cultivate something. An **AFK XP farm** means an easy way to gain XP while being AFK.  
 
 ### (1.3) Features
-As of 9/27/20, the following list are additional features of the program:
+As of 9/28/20, the following list are additional features of the program:
 
 **Game Features**
-- **Random** movement direction, shooting, and length of time of actions. This likely helps prevent flagging of bot, as it may deal some damage. 
+- **Random** movement and shooting length of time. This likely helps prevent flagging of the bot, as it may deal some damage. 
 - Buying random guns from armory.
 - Smooth and random mouse movements and click area. 
+- v1.1: Movement is a random combination of adjacent wasd keys (wa, sd, wd, etc.). 
+- v1.1: Program checks for update after 6 minutes of being in game to reduce time wasted and have smoother movements. 
 
 **User Features**
 - Automatic status update if game state is changed.
@@ -111,7 +113,7 @@ C. Chose to run XP bot (3):
 ## (3) User Operation: For Run Deathmatch Only
 This section (3) is only for running the XP bot, or the deathmatch program. 
 
-I will go over the simple in-program user functions I implemented to help users understand what is going on. These work _after_ the countdown is done. 
+I will go over the simple in-program user functions I implemented to help users understand what is going on. These work _after_ the countdown is done, so it can be called during queue and in game. 
 
 Summary of keys: **'ESC', 'U', 'I'**
 
