@@ -93,7 +93,7 @@ Open your terminal, or command line (on your computer, go to the search bar, and
 Continue working in the terminal. 
 
 1. Drag the terminal window and move it against the bottom left of your screen. 
-2. Type and enter **cd Desktop\VXPF**.
+2. Type and enter **cd Desktop\VXPF-1.1**.
 3. Type and enter **py valorant_XP_Farm.py**.
 4. It will prompt you what you would like to do. 1: Open Valorant, 2: Open Valorant and run the XP bot, 3: Run the XP bot, or 4: exit. Type in the number for what you want. 
 
