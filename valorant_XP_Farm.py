@@ -208,8 +208,8 @@ def run_Deathmatch(runtime_Hours):
 
         # Update game state if it has been at least over 5 minutes since game start. (games take at least 6 mins)
         # Reduces lookup image time and frequency.
-        if time.time() - time_Since_Game_Start >= 6 * 60:
-            update_Game_State()
+        #if time.time() - time_Since_Game_Start >= 6 * 60:
+           update_Game_State()
 
         # If prev and curr game states changed, print new status
         if game_State_Prev != game_State:
