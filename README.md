@@ -26,7 +26,7 @@ This bot is intended to used by anyone who plays Valorant. That said, this bot _
 It is recommended to use this bot when not actively needing to use the computer. I usually leave this bot running on my PC overnight.
 
 ### (0.2) Risk acknowledgement
-I am not responsible for the possible ban or termination of an account for using this program. Riot (the developer) _likely_ does not condone this. Though, over three separate accounts, I have ran this bot for over 60 hours cumulatively (as of 9/27/20), and have not recieved any warning or ban. See (1.3) for possible reasons why I have not been banned. 
+I am not responsible for the possible ban or termination of an account for using this program. Riot (the developer) _likely_ does not condone this. Though, over three separate accounts, I have ran this bot for over 120 hours cumulatively (as of 10/23/20), and have not recieved any warning or ban. See (1.3) for possible reasons why I have not been banned. 
 
 ***
 
