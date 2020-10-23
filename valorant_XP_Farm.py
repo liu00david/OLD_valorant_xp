@@ -6,7 +6,7 @@ import random
 import math
 import keyboard
 
-version = "v1.1"
+version = "v1.2"
 ################################################################################
 # DICTIONARIES
 #------------------------------------------------------------------------------#
@@ -19,7 +19,6 @@ loc_Dict["toolbar"] =       (114,1061)
 loc_Dict["loginInterface"]= (719,523)
 loc_Dict["username"] =      (399,402)
 loc_Dict["password"] =      (393,465)
-loc_Dict["login"] =         (516,659)
 
 # run_Deathmatch
 loc_Dict["playA"] =         (859,111)       #(934,21)
@@ -103,7 +102,7 @@ def write_Lifetime_XP():
         with open("lifetime_XP.txt","a+") as fh:
             for line in fh:
                 pass
-            fh.write("\n" + str(rounds_Played*500 + lifetime_XP))
+            fh.write("\n" + str(rounds_Played*900 + lifetime_XP))
         fh.close()
     except:
         print("Invalid input file or corrupted numbers.")
@@ -208,8 +207,9 @@ def run_Deathmatch(runtime_Hours):
 
         # Update game state if it has been at least over 5 minutes since game start. (games take at least 6 mins)
         # Reduces lookup image time and frequency.
-        #if time.time() - time_Since_Game_Start >= 6 * 60:
-        update_Game_State()
+        # if time is overdue OR gamestate is not in mode, update
+        if (time.time() - time_Since_Game_Start >= 6 * 60) or (game_State < 2):
+            update_Game_State()
 
         # If prev and curr game states changed, print new status
         if game_State_Prev != game_State:
@@ -378,7 +378,7 @@ def input_Credentials(user):
     pyautogui.typewrite(credentials_Dict[user][1])
     # Seems like Riot detects logins that are too fast. Sleep (2) seconds.
     time.sleep(1)
-    smooth_Click("login")
+    pyautogui.press('\n')
 
     # Now loaded interface. open_State 2 -> 3
     open_State = 3
@@ -407,9 +407,9 @@ def xp_Current():
     global rounds_Played
     # To cover -1 case. Only happens once.
     if rounds_Played < 0:
-        print("Games played: " + str(rounds_Played+1) + "\t\tXP: " + str((rounds_Played+1) * 500))
+        print("Games played: " + str(rounds_Played+1) + "\t\tXP: " + str((rounds_Played+1) * 900))
     else:
-        print("Games played: " + str(rounds_Played) + "\t\tXP: " + str(rounds_Played * 500))
+        print("Games played: " + str(rounds_Played) + "\t\tXP: " + str(rounds_Played * 900))
     return
 
 #------------------------------------------------------------------------------#
@@ -554,12 +554,12 @@ def deathmatch_Summary():
     write_Lifetime_XP()
 
     minutes_Operation = math.floor((time.time()-start_Time_Deathmatch)/60)
-    xp_PH = math.floor((rounds_Played * 500) / (minutes_Operation / 60))
+    xp_PH = math.floor((rounds_Played * 900) / (minutes_Operation / 60))
 
     print("\n>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     print("Finished deathmatch. \nTime elapsed (minutes): ", minutes_Operation)
     xp_Current()
-    print("XP per hour: ", xp_PH, "\tLifetime XP: ", (rounds_Played*500 + lifetime_XP))
+    print("XP per hour: ", xp_PH, "\tLifetime XP: ", (rounds_Played*900 + lifetime_XP))
     print("Quitting program.")
     print(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>")
     return
