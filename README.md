@@ -144,5 +144,10 @@ I plan on continuing to work on this project to make it even more foolproof. Her
 - Have AFK movement timing be more consistent
 - Popping a button up instead of working in terminal
 
+V1.2:
+- Updated to match 900 XP/ Deathmatch patch.
+- Updated log in interface click to enter key press instead
+- Bug fixes
+
 _Thanks for your time._
 _This project is still in development._
